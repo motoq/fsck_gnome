@@ -96,7 +96,7 @@ gsettings set org.gnome.Terminal.Legacy.Settings headerbar true
 ```
 Next, create
 ```
-~/.config/gtk-e.0/gtk.css
+~/.config/gtk-3.0/gtk.css
 ```
 with the following text:
 ```
@@ -110,3 +110,24 @@ VteTerminal, TerminalScreen, vte-terminal {
 ```
 It will most likely be necessary to log out and log back in for the
 change to take effect.
+
+
+## Misc
+
+
+```
+# Stop Gnome auto updates if you prefer handling system changes manually
+gsettings set org.gnome.software download-updates false
+```
+
+```
+# Make selected background image tile, not stretch
+gsettings set org.gnome.desktop.background picture-options "wallpaper"
+```
+
+```
+# Disabling the lock screen is helpful when accessing Linux via a VM and
+# the physical computer already has lock screen enabled.
+gsettings set org.gnome.desktop.lockdown disable-lock-screen 'true'
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+```
